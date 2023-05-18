@@ -1,0 +1,38 @@
+name: venv_fr
+channels:
+    - bioconda
+    - conda-forge
+    - defaults
+dependencies:
+    - anndata #0.9.1
+    - numpy #1.24.3
+    - scipy #1.10.1
+    - tqdm #4.65.0
+    - scikit-learn=0.24.1
+    - python>=3.6
+    - ipython #8.13.2
+    - notebook #6.5.4
+    - matplotlib-base #3.7.1 
+    - matplotlib-inline #0.1.6
+    - phate=1.0.7
+    - rpy2 #3.5.11
+    - r-base=4.2
+    - r-ggplot2 #3.4.2
+    - r-mgcv #1.8_42
+    - r-tidyverse #2.0.0
+    - r-dplyr #1.1.2
+    - r-seurat #4.3.0
+    - r-ggridges #0.5.4
+    - r-gridextra #2.3
+    - r-scales #1.2.1
+    - r-cairo #1.6_0
+    - r-igraph #1.4.2
+    - scanpy #1.7.2
+    - scprep #1.2.2
+    - python-igraph #0.10.4
+    - seaborn #0.12.2
+    - pip #23.1.2
+    - numba #0.57.0 
+    - umap-learn=0.5.3
+    - pip:
+        - transact_dr #1.0.1
