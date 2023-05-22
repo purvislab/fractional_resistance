@@ -114,7 +114,7 @@ ti <- function(df, pathname) {
         }
         
         
-        source("TrAGEDy_functions_tmz.R")
+        source("TrAGEDy_functions.R")
         untrt = subset(df, df$Origin==orig & df$well==0)
         slo_untrt2 = trj(untrt, sce_want=T)
         untrt = subset(untrt, !is.na(slo_untrt2$slingPseudotime_1))
