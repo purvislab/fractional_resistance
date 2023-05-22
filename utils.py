@@ -716,12 +716,13 @@ def run_logistic_regression(adata = None,
         Returns
         ----------
     """
+    make_directory(save_directory)
     for label_id in groups:
         file_id = f'{origin}_{label_id}'
         print(file_id)    
         adata_subset = subset_cells(adata = adata, labels_key = labels_key, label_id = label_id)
 
-        coef, auc, tpr_fpr, pvals = logistic_reg(X = adata_subset.X.copy(), y = np.asarray(adata_subset.obs['condition']), feature_names = adata_subset.var_names, n_splits = n_splits)
+        coef, auc, tpr_fpr, pvals = logistic_reg(X = adata_subset.X.copy(), y = np.asarray(adata_subset.obs[condition_key]), feature_names = adata_subset.var_names, n_splits = n_splits)
 
         # save data
         coef.to_csv(os.path.join(save_directory, file_id+'_coef.csv'))
@@ -789,6 +790,7 @@ def mean_barplots(adata = None,
                 ylim = [-1, 2.5],
                 hue: str = 'phase', 
                 hue_order = ['G0', 'G1', 'S', 'G2M'],
+                save_directory: str = None,
                 filename_save: str = None):
     """Plots mean expression for each marker
         Parameters
@@ -804,6 +806,8 @@ def mean_barplots(adata = None,
            dictionary for color ids for groups in barplots
         y_lim: list 
             ylim values for plotting the expression values
+        save_directory: str (default = None)
+            string referring to directory for saving
         filename_save: str (default = None)
             string referring to the filename for saving
         ----------
@@ -811,6 +815,7 @@ def mean_barplots(adata = None,
         Returns
         ----------
     """
+    make_directory(save_directory)
     df = pd.DataFrame(adata.X, columns = adata.var_names)
     df = df.loc[:, feature_order]
     df['condition'] = adata.obs['condition'].values #'well'
@@ -832,4 +837,18 @@ def mean_barplots(adata = None,
 
     axes[3,3].set_visible(False)
     axes[3,2].set_visible(False)
-    plt.savefig(f'{filename_save}.pdf', bbox_inches = 'tight')
+    plt.savefig(os.path.join(save_directory, f'{filename_save}.pdf'), bbox_inches = 'tight')
+
+def make_directory(directory: str = None):
+    """Creates a directory at the specified path if one doesn't exist.
+
+    Parameters
+    ----------
+    directory : str
+        A string specifying the directory path.
+
+    Returns
+    -------
+    """
+    if not os.path.exists(directory):
+        os.makedirs(directory)
