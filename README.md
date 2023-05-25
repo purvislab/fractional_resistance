@@ -6,7 +6,7 @@
 </p>
 
 ## Introduction
-We performed multiplex, single-cell imaging to build a proteomic profile for individual tumor cells treated with palbociclib and identified fractionally resistant cells both in a cell culture model of ER+ breast cancer (T47D), as well as from live primary tumor cells resected from a patient. We show that ER+/HER2- tumor cells show subtle, cell-to-cell differences in core cell cycle regulators that allow a subset of tumor cells to escape CDK4/6 inhibitor therapy. For more details, please read the associated preprint. [Zikry TM†, Wolff SC†, Ranek JS, Davis H, Naugle A, Whitman AA, Kosorok MR, Spanheimer PM*, and Purvis JE*. Cell cycle plasticity underlies fractional resistance to palbociclib in ER+/HER2- breast tumor cells. _bioRxiv_. 2023.]()
+We performed multiplex, single-cell imaging to build a proteomic profile for individual tumor cells treated with palbociclib and identified fractionally resistant cells both in a cell culture model of ER+ breast cancer (T47D), as well as from live primary tumor cells resected from a patient. We show that ER+/HER2- tumor cells show subtle, cell-to-cell differences in core cell cycle regulators that allow a subset of tumor cells to escape CDK4/6 inhibitor therapy. For more details, please read the associated preprint. [Zikry TM†, Wolff SC†, Ranek JS, Davis H, Naugle A, Whitman AA, Kosorok MR, Spanheimer PM*, and Purvis JE*. Cell cycle plasticity underlies fractional resistance to palbociclib in ER+/HER2- breast tumor cells. _bioRxiv_. 2023.](https://www.biorxiv.org/content/10.1101/2023.05.22.541831v1)
 
 ## Installation
 * You can clone the git repository by, 
